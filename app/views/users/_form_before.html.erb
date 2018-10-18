@@ -1,0 +1,77 @@
+<!-- None of this code is used - I am just storing my original version of the form and the bootstrap form, in order to try and integrate the bootstrap styling later.  -->
+
+<!-- MY FORM -->
+
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Login" %>
+  </div>
+<% end %>
+
+
+<!-- Alternative form - Bootstrap, need to link it to the app -->
+
+<div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+
+        <label for="inputName" class="sr-only">Full name</label>
+        <input type="text" id="inputName" class="form-control" placeholder="Full name" required autofocus>
+
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+        <label for="inputPhone" class="sr-only">Phone number</label>
+        <input type="number" id="inputPhone" class="form-control" placeholder="Phone number" required>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div>

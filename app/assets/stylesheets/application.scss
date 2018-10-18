@@ -1,0 +1,12 @@
+@import "config/fonts";
+@import "config/colors";
+
+@import "pages/login";
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+// Define fonts for body and headers
+$body-font: "Lato", "Helvetica", "sans-serif";
+$headers-font: "Raleway", "Helvetica", "sans-serif";
